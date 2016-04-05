@@ -1,0 +1,37 @@
+<%- include header %>
+<form class="form-horizontal" method="post">
+	<fieldset>
+		<legend>用户注册</legend>
+		<div class="control-group">
+			<label class="control-label" for="username">用户名</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" id="username" placeholder="请输入邮箱地址/手机号/用户名" name="username" required data-validation-required-message="请输入您的账户名称">
+				<p class="help-block text-danger"></p>
+			</div>
+		</div>
+		<div class="control-group"> 
+      <label class="control-label" for="password">口令</label> 
+      <div class="controls"> 
+        <input type="password" class="input-xlarge" id="password" name="password"> 
+      </div> 
+       </div> 
+    <div class="control-group"> 
+      <label class="control-label" for="password-repeat">重复输入口令</label> 
+      <div class="controls"> 
+        <input type="password" class="input-xlarge" id="password-repeat"  
+           name="password-repeat"> 
+      </div> 
+    </div> 
+    <div class="control-group"> 
+      <label class="control-label" for="password-repeat">邮箱</label> 
+      <div class="controls"> 
+        <input type="email" class="input-xlarge" id="email"  
+           name="email"> 
+      </div> 
+    </div>     
+    <div class="form-actions"> 
+      <button type="submit" class="btn btn-primary">注册</button> 
+    </div> 
+	</fieldset>
+</form>
+<%- include footer %>

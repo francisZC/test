@@ -1,0 +1,46 @@
+<%- include header %>   
+ <div class="jumbotron"> 
+  <h1>欢迎来到 时间机器</h1> 
+  <p>时间机器 让你每天多一小时。</p> 
+
+<%if(error){%>
+<div class="alert alert-error " ><%=error%></div>
+<%}%>
+  <p> 
+    <%if(success){%>
+    <a class="alert alert-success  " ><%= success%></a>
+<%} else{%>
+    <a class="btn btn-primary btn-large" href="/login">登录</a> 
+    <a class="btn btn-large" href="/reg">立即注册</a> 
+<%} %>
+    
+  </p> 
+</div> 
+ <div class="container">
+     <%posts.forEach(function(post, index){ %>
+     <p><h2><a href="/p/<%= post._id%>"><%=post.title%></a></h2>
+     <a href="/u/<%=post.name%>"><img src="<%=post.head%>" class="r_head"></a>
+     </p>
+     <p class="info">
+         作者：<a href="/u/<%=post.name%>"><%= post.name%></a>|
+         日期：<%= post.time.day%>
+         标签：
+         <% if(post.tags){%>
+         <%post.tags.forEach(function(tag, index){%>
+         <a href="/tags/<%=tag%>" class="tag"><%=tag%></a>
+         <%})%>
+         <%}%>
+
+     </p>
+     <p><%- post.post%></p>
+<p class="info">
+  阅读：<%= post.pv%>|
+  评论：<%= post.comments.length%>|
+ 
+</p>
+
+     <%})%>
+ </div>
+
+<%- include paging %>
+<%- include footer %>
